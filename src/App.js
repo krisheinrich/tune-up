@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import String from './String';
 import './App.css';
 
-const NOTES = 'EADGBE'.split('');
+const NOTES = 'E2 A2 D3 G3 B3 E4'.split(' ');
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
         </header>
         <section className="string-buttons">
           { NOTES.map((name, i) =>
-            <String name={name} onClick={()=>console.log("clicked "+name)} />
+            <String key={i} name={name} src={`audio/${name}.mp3`} />
           ) }
         </section>
       </div>
